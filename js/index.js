@@ -12,6 +12,8 @@ $(document).ready(function() {
 	});
 
 	$("#talkBtn").click(function(){
-		$("#talkResponse").css('visibility','visible').hide().slideDown();
+		$(this).prop("disabled", true)
+		$("#talkResponse1").css('visibility','visible').hide().slideDown();
+		$("#talkResponse2").delay(3000).css('visibility','visible').hide().slideDown();
 	});
 });
