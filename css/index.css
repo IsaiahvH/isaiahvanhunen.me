@@ -1,0 +1,69 @@
+body {
+	height: 100vh;
+}
+
+/* Transitions */
+#prefixText {
+	display: flex;
+	opacity: 0;
+	margin-left: -10%;
+}
+
+/* Fancy form label */
+.form-label-group {
+  position: relative;
+}
+
+.form-label-group > input,
+.form-label-group > label {
+  padding: .75rem;
+}
+
+.form-label-group > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1.5;
+  pointer-events: none;
+  transition: all .3s ease-in-out, opacity 1s ease-in-out;
+}
+
+.form-label-group input:not(:placeholder-shown) ~ label, .form-label-group input:focus ~ label {
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  font-size: 24px;
+  border-width: 0;
+}
+
+.form-label-group input:disabled ~ label {
+	opacity: 0;
+}
+
+.form-label-group input {
+	height: 110px;
+	background: none;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid rgb(245, 245, 245);
+	transition: border 1s ease-in-out;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown), .form-label-group input:focus {
+  padding-top: 2.75rem;
+  padding-bottom: .25rem;
+}
+
+.form-label-group input:not(:focus) {
+	cursor: pointer;
+}
+
+.form-label-group input:disabled {
+	border-color: rgba(245, 245, 245, 0);
+}
