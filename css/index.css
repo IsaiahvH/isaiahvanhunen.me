@@ -60,7 +60,7 @@ body {
   padding-bottom: .25rem;
 }
 
-.form-label-group input:not(:focus) {
+.form-label-group input:not(:focus), :not(:disabled) {
 	cursor: pointer;
 }
 
