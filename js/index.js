@@ -2,12 +2,17 @@ $(document).ready(function() {
 	$('input[name=nameField]').keyup(function(e){
 		if(e.keyCode == 13){
 			$(this).prop("disabled", true).val($(this).val()+".");
-			$("#nameFieldHolder").delay(1000).addClass("col-10").removeClass("col-12");
-			$("#prefixText").delay(1750).animate({
+			$("#nameFieldPanel .col-12").addClass("col-10").removeClass("col-12");
+			$("#prefixText").delay(1250).animate({
 				'margin-left' : "0%",
 				'opacity' : '1',
 			}, 500);
-			$("#greetingResponse").delay(2750).animate({opacity: 1}, 1000);
+			setTimeout(function(){
+				$("input[name=nameField]").removeClass("text-white").addClass("text-dark");
+				$("#nameFieldPanel h1").removeClass("text-white").addClass("text-dark");
+				$("body").removeClass("bg-dark");
+			}, 2500);
+			$("#greetingResponse").delay(3750).animate({opacity: 1}, 1000);
 		}
 	});
 
