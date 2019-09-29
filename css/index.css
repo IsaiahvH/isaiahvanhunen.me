@@ -1,6 +1,5 @@
 body {
-  height: 100vh;
-  transition: background-color 1.5s ease-in-out;
+	height: 100vh;
 }
 
 /* Transitions */
@@ -49,11 +48,7 @@ body {
 	border: none;
 	outline: none;
 	border-bottom: 1px solid rgb(245, 245, 245);
-	transition: border 1s ease-in-out, color 1s ease-in-out;
-}
-
-#nameFieldPanel h1 {
-  transition: color 1s ease-in-out;
+	transition: border 1s ease-in-out;
 }
 
 .form-label-group input::placeholder {
