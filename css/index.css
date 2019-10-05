@@ -1,5 +1,10 @@
 body {
 	height: 100vh;
+  transition: background-color 1.5s ease-in-out;
+}
+
+.bg-greenish {
+  background-color: #045f5a;
 }
 
 /* Transitions */
