@@ -7,6 +7,7 @@ $(document).ready(function() {
 		if(e.keyCode == 13){
 			$(this).prop("disabled", true).val($(this).val()+".");
 			$("#nameFieldHolder").addClass("col-10").removeClass("col-12");
+			$("#headSVG").delay(1000).animate({opacity: 1}, 500);
 			$("#prefixText").delay(1750).animate({
 				'margin-left' : "0%",
 				'opacity' : '1',

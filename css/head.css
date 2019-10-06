@@ -1,0 +1,11 @@
+#rightEye path {
+	transform-origin: 50% 50%;
+	transform-box: fill-box;
+	transition: transform .2s ease-in-out;
+	transform: scaleY(1);
+
+}
+
+#rightEye.blink path {
+	transform: scaleY(0.2);
+}
