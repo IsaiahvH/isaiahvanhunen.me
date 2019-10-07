@@ -7,6 +7,10 @@ body {
   background-color: #045f5a;
 }
 
+.border-greenish {
+  border-color: #045f5a;
+}
+
 /* Head */
 #headSVG {
   pointer-events: none;
@@ -15,7 +19,7 @@ body {
 }
 
 #resetGreeting {
-  display: none;
+  visibility: hidden;
 }
 
 /* Transitions */

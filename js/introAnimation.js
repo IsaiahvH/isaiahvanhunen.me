@@ -5,7 +5,7 @@ if(localStorage.getItem("name") != null){
 
 $(document).ready(function() {
 	setTimeout(function(){
-		$('input[name=nameField]').focus();
+		$('input[name=nameField]:not(:focus)').focus();
 	}, 1500);
 
 	if(localStorage.getItem("name") == null){
@@ -62,7 +62,7 @@ function introduceMyself(svgElem, name = false){
 		var blinkDelay = introDelay+TC*1000
 		$("#rightEye", SVGRoot).delay(blinkDelay).queue(function(){
 			$(this).addClass("blink").dequeue();
-		}).delay(200).queue(function(){
+		}).delay(350).queue(function(){
 			$(this).removeClass("blink").dequeue();
 		});
 	}
@@ -75,5 +75,7 @@ function introduceMyself(svgElem, name = false){
 
 	// Animate response
 	$("#greetingResponse").delay(bodyDelay + TC*500).animate({opacity: 1}, TC*1000);
-	$("#resetGreeting").delay(bodyDelay + TC*1500).fadeIn();
+	$("#resetGreeting").delay(bodyDelay + TC*1500).queue(function(){
+		$(this).css("visibility", "visible").dequeue();
+	});
 }
