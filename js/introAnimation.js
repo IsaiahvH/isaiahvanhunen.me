@@ -8,15 +8,16 @@ $(document).ready(function() {
 		$('input[name=nameField]:not(:focus)').focus();
 	}, 1500);
 
-	if(localStorage.getItem("name") == null){
-		$("#headSVG").on("load", function(){
+	$("#headSVG").on("load", function(){
+		$("#loadScreen").css("opacity", "0");
+		if(localStorage.getItem("name") == null){
 			var svgElem = this;
 			$('input[name=nameField]').keyup(function(e){
 				if(e.keyCode == 13)
 					introduceMyself(svgElem);
 			});
-		});
-	}
+		}
+	});
 
 	$("#talkBtn").click(function(){
 		$(this).prop("disabled", true)

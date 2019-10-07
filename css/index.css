@@ -3,12 +3,24 @@ body {
   transition: background-color 1.5s ease-in-out;
 }
 
+#loadScreen {
+	z-index: 999;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: #045f5a;
+	transition: opacity .3s ease-in-out;
+	pointer-events: none;
+}
+
+/* Custom styles */
+
 .bg-greenish {
   background-color: #045f5a;
 }
 
 .border-greenish {
-  border-color: #045f5a;
+  border-color: #055551;
 }
 
 /* Head */
