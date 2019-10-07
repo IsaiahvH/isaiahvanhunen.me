@@ -1,8 +1,3 @@
-body {
-	height: 100vh;
-  transition: background-color 1.5s ease-in-out;
-}
-
 #loadScreen {
 	z-index: 999;
 	position: absolute;
@@ -13,61 +8,86 @@ body {
 	pointer-events: none;
 }
 
-/* Custom styles */
+/* Welcome ection */
+#welcomeSection {
+	transition: background-color 1.5s ease-in-out;
+}
 
+#downChevron {
+	position: absolute;
+    left: 50%;
+    bottom: 5%;
+    color: #f8f9fa73;
+    transform: scaleX(2);
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+/* Custom styles */
 .bg-greenish {
-  background-color: #045f5a;
+	background-color: #045f5a !important;
 }
 
 .border-greenish {
-  border-color: #055551;
+	border-color: #055551 !important;
 }
 
 /* Head */
 #headSVG {
-  pointer-events: none;
-  opacity: 0;
-  user-select: none;
+	pointer-events: none;
+	user-select: none;
 }
 
-#resetGreeting {
-  visibility: hidden;
+#welcomeSection.hidden #headSVG {
+	opacity: 0;
 }
 
-/* Transitions */
+#welcomeSection.hidden #resetGreeting {
+	visibility: hidden;
+}
+
+#welcomeSection.hidden #greetingResponse {
+	opacity: 0;
+}
+
 #prefixText {
 	display: flex;
+}
+#welcomeSection.hidden #prefixText {
 	opacity: 0;
 	margin-left: -10%;
 }
 
 /* Fancy form label */
 .form-label-group {
-  position: relative;
+	position: relative;
 }
 
 .form-label-group > input,
 .form-label-group > label {
-  padding: .75rem;
+	padding: .75rem;
 }
 
 .form-label-group > label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  margin-bottom: 0;
-  line-height: 1.5;
-  pointer-events: none;
-  transition: all .3s ease-in-out, opacity 1s ease-in-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	margin-bottom: 0;
+	line-height: 1.5;
+	pointer-events: none;
+}
+
+#welcomeSection.hidden .form-label-group > label {
+	transition: all .3s ease-in-out, opacity 1s ease-in-out;
 }
 
 .form-label-group input:not(:placeholder-shown) ~ label, .form-label-group input:focus ~ label {
-  padding-top: .25rem;
-  padding-bottom: .25rem;
-  font-size: 24px;
-  border-width: 0;
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+	font-size: 24px;
+	border-width: 0;
 }
 
 .form-label-group input:disabled ~ label {
@@ -80,16 +100,19 @@ body {
 	border: none;
 	outline: none;
 	border-bottom: 1px solid rgb(245, 245, 245);
+}
+
+#welcomeSection.hidden .form-label-group input {
 	transition: border 1s ease-in-out;
 }
 
 .form-label-group input::placeholder {
-  color: transparent;
+	color: transparent;
 }
 
 .form-label-group input:not(:placeholder-shown), .form-label-group input:focus {
-  padding-top: 2.75rem;
-  padding-bottom: .25rem;
+	padding-top: 2.75rem;
+	padding-bottom: .25rem;
 }
 
 .form-label-group input:not(:focus):not(:disabled) {

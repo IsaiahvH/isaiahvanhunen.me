@@ -1,7 +1,13 @@
 if(localStorage.getItem("name") != null){
-	$("body, .form-label-group > label, .form-label-group input").css("transition", "none");
 	introduceMyself(false, localStorage.getItem("name"));
+} else {
+	$("#welcomeSection").removeClass("bg-greenish").addClass("hidden bg-dark");
 }
+
+$('#fullpage').fullpage({
+	licenseKey: "d0m8b1M",
+	autoScrolling: true
+});
 
 $(document).ready(function() {
 	setTimeout(function(){
@@ -32,35 +38,36 @@ $(document).ready(function() {
 });
 
 function introduceMyself(svgElem, name = false){
-	if(svgElem)
-		var SVGRoot = svgElem.contentDocument.documentElement;
-	if(name){
-		$("input[name=nameField]").val(name);
-	} else {
-		localStorage.setItem("name", $("input[name=nameField]").val());
-	}
 	$("input[name=nameField]").prop("disabled", true);
 	$("#nameFieldHolder").addClass("col-10").removeClass("col-12");
+	if(name){
+		$("input[name=nameField]").val(name+".");
+	} else {
+		localStorage.setItem("name", $("input[name=nameField]").val());
+		doIntroAnimation(svgElem);
+	}
+}
 
-	var TC = name ? 0 : 1;
+function doIntroAnimation(svgElem){
+	var SVGRoot = svgElem.contentDocument.documentElement;
 
 	// Animate head
-	var headDelay = TC*1000;
-	$("#headSVG").delay(headDelay).animate({opacity: 1}, TC*500);
+	var headDelay = 1000;
+	$("#headSVG").delay(headDelay).animate({opacity: 1}, 500);
 
 	// Animate introduction
-	var introDelay = headDelay+TC*750
+	var introDelay = headDelay+750
 	$("#prefixText").delay(introDelay).animate({
 		'margin-left' : "0%",
 		'opacity' : '1',
-	}, TC*500);
-	$("input[name=nameField]").delay(introDelay+TC*600).queue(function(){
+	}, 500);
+	$("input[name=nameField]").delay(introDelay+600).queue(function(){
 		$(this).val($(this).val()+".").dequeue();
 	});
 
 	// Blink
 	if(svgElem){
-		var blinkDelay = introDelay+TC*1000
+		var blinkDelay = introDelay+1000
 		$("#rightEye", SVGRoot).delay(blinkDelay).queue(function(){
 			$(this).addClass("blink").dequeue();
 		}).delay(350).queue(function(){
@@ -69,14 +76,14 @@ function introduceMyself(svgElem, name = false){
 	}
 
 	// Animate body
-	var bodyDelay = blinkDelay+TC*1000;
-	$("body").delay(bodyDelay).queue(function(){
+	var bodyDelay = blinkDelay+1000;
+	$("#welcomeSection").delay(bodyDelay).queue(function(){
 		$(this).removeClass("bg-dark").addClass("bg-greenish");
 	});
 
 	// Animate response
-	$("#greetingResponse").delay(bodyDelay + TC*500).animate({opacity: 1}, TC*1000);
-	$("#resetGreeting").delay(bodyDelay + TC*1500).queue(function(){
+	$("#greetingResponse").delay(bodyDelay + 500).animate({opacity: 1}, 1000);
+	$("#resetGreeting").delay(bodyDelay + 1500).queue(function(){
 		$(this).css("visibility", "visible").dequeue();
 	});
 }

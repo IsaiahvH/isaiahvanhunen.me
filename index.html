@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 	<!-- Internal CSS -->
+	<link rel="stylesheet" href="/css/libs/fullpage.min.css">
 	<link rel="stylesheet" href="/css/index.css">
 
 	<!-- Icon -->
@@ -25,48 +26,55 @@
 	<title>Welcome</title>
 </head>
 
-<body class="bg-dark">
+<body>
 	<div id="loadScreen"></div>
-	<div class="container h-100">
-		<div class="row h-100 align-items-center">
-			<div class="col-7">
-				<div class="row no-gutters text-white">
-					<div class="col-auto align-items-end" id="prefixText">
-						<h1 class="display-4 m-0">Hi</h1>
-					</div>
-					<div class="col-12" id="nameFieldHolder">
-						<div class="form-label-group">
-							<input type="text" class="display-4 text-white" name="nameField" placeholder="What's your name?">
-							<label for="nameField" class="display-4 text-white">What's your name?</label>
+	<div id="fullpage">
+		<div id="welcomeSection" class="section bg-greenish">
+			<div class="container">
+				<div class="row">
+					<div class="col-7">
+						<div class="row no-gutters text-white">
+							<div class="col-auto align-items-end" id="prefixText">
+								<h1 class="display-4 m-0">Hi</h1>
+							</div>
+							<div class="col-12" id="nameFieldHolder">
+								<div class="form-label-group">
+									<input type="text" class="display-4 text-white" name="nameField" placeholder="What's your name?">
+									<label for="nameField" class="display-4 text-white">What's your name?</label>
+								</div>
+							</div>
+						</div>
+						<div class="row" id="greetingResponse">
+							<div class="col-auto text-white">
+								<p>Good to see you here.<br />I am me, that is, Isaiah. What can I do for you?</p>
+
+								<p id="talkResponse1" style="display: none">That's nice of you! However, I'm afraid at this moment, I am not yet an A.I. Therefore, you best come see me in person or send me an email still.</p>
+								<p id="talkResponse2" style="display: none">Nice of you to visit, however.</p>
+
+								<hr class="mt-0 bg-greenish">
+								<div class="row">
+									<div class="col-auto"><a class="btn btn-outline-light btn-sm" href="mailto:isaiahvanhunen@gmail.com" role="button">Send an email</a></div>
+									<div class="col-auto"><button id="talkBtn" class="btn btn-outline-light btn-sm">Let's talk!</button></div>
+									<div class="col-auto"><a class="btn btn-outline-light btn-sm" href="https://github.com/IsaiahvH/isaiahvanhunen.me" target="_blank" role="button">So how's this all made?</a></div>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row" id="greetingResponse" style="opacity: 0">
-					<div class="col-auto text-white">
-						<p>Good to see you here.<br />I am me, that is, Isaiah. What can I do for you?</p>
-
-						<p id="talkResponse1" style="display: none">That's nice of you! However, I'm afraid at this moment, I am not yet an A.I. Therefore, you best come see me in person or send me an email still.</p>
-						<p id="talkResponse2" style="display: none">Nice of you to visit, however.</p>
-
-						<hr class="mt-0 bg-greenish">
-						<div class="row">
-							<div class="col-auto"><a class="btn btn-outline-light btn-sm" href="mailto:isaiahvanhunen@gmail.com" role="button">Send an email</a></div>
-							<div class="col-auto"><button id="talkBtn" class="btn btn-outline-light btn-sm">Let's talk!</button></div>
-						</div>
+					<div class="col-4">
+						<object id="headSVG" data="/img/myHead.svg" type="image/svg+xml" class="w-100 border-bottom border-greenish"></object>
+						<p class="text-right"><a href="#" id="resetGreeting" class="small text-muted">redo</a></p>
 					</div>
 				</div>
 			</div>
-			<div class="col-4">
-				<object id="headSVG" data="/img/myHead.svg" type="image/svg+xml" class="w-100 border-bottom border-greenish"></object>
-				<p class="text-right"><a href="#" id="resetGreeting" class="small text-muted">redo</a></p>
-			</div>
+			<span id="downChevron">&#x25BD;</span>
 		</div>
+		<div class="section bg-success">test</div>
 	</div>
-
 	<!-- External JavaScript -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 	<!-- Internal JavaScript -->
+	<script src="/js/libs/fullpage.min.js"></script>
 	<script src="/js/introAnimation.js"></script>
 	<script src="/js/headAnimation.js"></script>
 </body>
