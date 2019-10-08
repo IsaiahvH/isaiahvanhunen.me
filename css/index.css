@@ -20,7 +20,7 @@
     color: #f8f9fa73;
     transform: scaleX(2);
     font-weight: lighter;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 /* Custom styles */
@@ -38,7 +38,7 @@
 	user-select: none;
 }
 
-#welcomeSection.hidden #headSVG {
+#welcomeSection.hidden #headSVG, #welcomeSection.hidden #greetingResponse, #welcomeSection.hidden #downChevron, #welcomeSection.hidden #prefixText {
 	opacity: 0;
 }
 
@@ -46,15 +46,10 @@
 	visibility: hidden;
 }
 
-#welcomeSection.hidden #greetingResponse {
-	opacity: 0;
-}
-
 #prefixText {
 	display: flex;
 }
 #welcomeSection.hidden #prefixText {
-	opacity: 0;
 	margin-left: -10%;
 }
 
