@@ -18,9 +18,12 @@
     left: 50%;
     bottom: 5%;
     color: #f8f9fa73;
-    transform: scaleX(2);
+    transform: scaleX(3);
     font-weight: lighter;
 	cursor: pointer;
+}
+#downChevron:after {
+	content: "v";
 }
 
 /* Custom styles */
